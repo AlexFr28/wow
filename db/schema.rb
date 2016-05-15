@@ -11,12 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513152152) do
+ActiveRecord::Schema.define(version: 20160515202345) do
 
   create_table "factions", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "races", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "faction_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "races", ["faction_id"], name: "index_races_on_faction_id"
 
 end
