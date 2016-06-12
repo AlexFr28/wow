@@ -180,3 +180,21 @@ Job.create(name: 'Archéologie', order: 'secondaire')
 Job.create(name: 'Pêche', order: 'secondaire')
 Job.create(name: 'Cuisine', order: 'secondaire')
 Job.create(name: 'Secourisme', order: 'secondaire')
+
+alex = User.create(
+  nickname: 'Alexandre',
+  email: 'alexandre.cuillerier@gmail.com',
+  password: 12345678)
+
+Character.create(
+  name: 'Greedo',
+  user_id: alex.id,
+  faction_id: alliance.id,
+  classe_id: chasseur.id,
+  race_id: elfe_de_la_nuit.id)
+Character.create(
+  name: 'Marajades',
+  user_id: alex.id,
+  faction_id: alliance.id,
+  classe_id: paladin.id,
+  race_id: humain.id)

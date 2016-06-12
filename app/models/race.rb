@@ -4,4 +4,5 @@ class Race < ActiveRecord::Base
   validates_uniqueness_of :name, scope: :name, message: "Nom de race déjà utilisé"
 
   has_many :link_class_races
+  has_many :characters
 end

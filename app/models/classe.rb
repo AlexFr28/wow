@@ -4,4 +4,5 @@ class Classe < ActiveRecord::Base
 
   has_many :races
   has_many :link_class_races
+  has_many :characters
 end
