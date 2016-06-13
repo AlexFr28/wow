@@ -1,5 +1,8 @@
-%h1 Bienvenue sur votre tableau de bord
+#dashboard
+  = image_tag "/assets/logo_wow.png", class: 'logo-wow'
 
-%ul
-- @characters.each do |character|
-  %li= character.name
+  %ul
+  - @characters.each do |character|
+    %li= character.name
+
+  = button_to 'Entrer dans le jeu', root_path, class: 'btn button-entry'
