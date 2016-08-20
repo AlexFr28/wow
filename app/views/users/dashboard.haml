@@ -1,8 +1,12 @@
 #dashboard
+
   = image_tag "/assets/logo_wow.png", class: 'logo-wow'
 
-  %ul
-  - @characters.each do |character|
-    %li= character.name
+  .current-character
+    = button_to 'Entrer dans le jeu', root_path, class: 'btn button-entry center-block button-wow', method: :get
 
-  = button_to 'Entrer dans le jeu', root_path, class: 'btn button-entry'
+  .characters
+    %ul.list-group
+      - @characters.each do |character|
+        = render partial: 'character_short_info', locals: { character: character }
+    = button_to 'Nouveau personnage', root_path, class: 'btn button-add-charac center-block button-wow', method: :get
