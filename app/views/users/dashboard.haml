@@ -9,4 +9,5 @@
     %ul.list-group
       - @characters.each do |character|
         = render partial: 'character_short_info', locals: { character: character }
-    = button_to 'Nouveau personnage', root_path, class: 'btn button-add-charac center-block button-wow', method: :get
+    - if @characters.count < 10
+      = button_to 'Nouveau personnage', new_character_path, class: 'btn button-add-charac center-block button-wow', method: :get

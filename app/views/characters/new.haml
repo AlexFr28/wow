@@ -1,0 +1,17 @@
+#new-character
+
+  .races
+    .text-center
+      Choisissez votre race
+    %ul.list-group
+      - @races.each do |race|
+        = render partial: 'race_short_info', locals: { race: race }
+
+  .current-character
+
+  .classes
+    .text-center
+      Choisissez votre classe
+    %ul.list-group
+      - @classes.each do |classe|
+        = render partial: 'classe_short_info', locals: { classe: classe }
